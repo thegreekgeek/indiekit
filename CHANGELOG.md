@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.27](https://github.com/getindiekit/indiekit/compare/v1.0.0-beta.26...v1.0.0-beta.27) (2026-03-07)
+
+
+### Bug Fixes
+
+* **create-indiekit:** add missing bluesky dependency ([7a4290e](https://github.com/getindiekit/indiekit/commit/7a4290e62e12206b37bd4ecbf0a64cd049632602))
+* **error:** ensure name is a string before calling replace in getError ([b35c27a](https://github.com/getindiekit/indiekit/commit/b35c27a36bb75d6d9bc6a2ae5b5f6fd92b1208a3))
+* **frontend:** dark theme form component styles ([86ec381](https://github.com/getindiekit/indiekit/commit/86ec3819fb9f6b29f677d4981811a9575accb364))
+* **frontend:** update input widths ([09d8236](https://github.com/getindiekit/indiekit/commit/09d82368adbb17f5c0e070711984ca7b946a0a43))
+
+
+### Features
+
+* **endpoint-image:** add option to specify remote domains for image resizing ([dfd53c0](https://github.com/getindiekit/indiekit/commit/dfd53c038d7e7065cc42af07fcb3b7809ad5dc86))
+
+
+
+
+
 # [1.0.0-beta.26](https://github.com/getindiekit/indiekit/compare/v1.0.0-beta.25...v1.0.0-beta.26) (2026-01-02)
 
 

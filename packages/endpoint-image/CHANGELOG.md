@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.27](https://github.com/getindiekit/indiekit/compare/v1.0.0-beta.26...v1.0.0-beta.27) (2026-03-07)
+
+
+### Features
+
+* **endpoint-image:** add option to specify remote domains for image resizing ([dfd53c0](https://github.com/getindiekit/indiekit/commit/dfd53c038d7e7065cc42af07fcb3b7809ad5dc86))
+
+
+
+
+
 # [1.0.0-beta.25](https://github.com/getindiekit/indiekit/compare/v1.0.0-beta.24...v1.0.0-beta.25) (2025-12-24)
 
 **Note:** Version bump only for package @indiekit/endpoint-image
