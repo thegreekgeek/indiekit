@@ -1,0 +1,63 @@
+services:
+  indiekit:
+    container_name: indiekit
+    image: getindiekit/indiekit:latest
+    restart: always
+    build:
+      context: .
+      args:
+        MASTODON_USER: ${MASTODON_USER}
+        MASTODON_URL: ${MASTODON_URL}
+        GITEA_USER: ${GITEA_USER}
+        GITEA_REPO: ${GITEA_REPO}
+        GITEA_BRANCH: ${GITEA_BRANCH}
+        GITEA_INSTANCE: ${GITEA_INSTANCE}
+        LOCALE: ${LOCALE}
+        TZ: ${TZ}
+        PUBLICATION_URL: ${PUBLICATION_URL}
+        HOST_URL: ${HOST_URL}
+    pull_policy: never
+    ports:
+      - "${HTTP_PORT:-3050}:3000"
+    hostname: ${STACK_NAME} 
+    labels:
+       tsdproxy.enable: "true"
+       tsdproxy.name: "${STACK_NAME}"
+       tsdproxy.funnel: "true"
+       tsdproxy.authkey: "${TSAUTHKEY}"
+       tsdproxy.container_port: 3000
+    # depends_on:
+    #   - tailscale
+    # network_mode: service:tailscale
+    volumes:
+      - ./logs:/root/.npm/_logs/
+    environment:
+      - GITEA_TOKEN
+      - GITEA_BRANCH
+      - GITEA_USER
+      - GITEA_REPO
+      - GITEA_INSTANCE
+      - MASTODON_USER
+      - MASTODON_URL
+      - MASTODON_ACCESS_TOKEN
+      - MONGO_URL=mongodb://$MONGO_INITDB_ROOT_USERNAME:$MONGO_INITDB_ROOT_PASSWORD@mongo
+      - PASSWORD_SECRET
+      - SECRET
+      - THEME_COLOR
+      - TZ
+      - LOCALE
+      - HOST_URL
+      - PUBLICATION_URL
+      - SERVER_NAME
+  mongo:
+    container_name: mongo
+    image: mongo:4
+    restart: always
+    volumes:
+      - mongo:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME
+      - MONGO_INITDB_ROOT_PASSWORD
+
+volumes:
+  mongo:
